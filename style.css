@@ -1,0 +1,167 @@
+:root {
+  --bg-color: #f8f8f2;
+  --text-color: #282a36;
+  --primary-color: #6272a4;
+  --secondary-color: #bd93f9;
+  --accent-color: #ff79c6;
+  --input-bg: #fff;
+  --input-text: #282a36;
+  --button-bg: #6272a4;
+  --button-text: #f8f8f2;
+  --error-color: #ff5555;
+}
+
+[data-theme="dark"] {
+  --bg-color: #282a36;
+  --text-color: #f8f8f2;
+  --primary-color: #6272a4;
+  --secondary-color: #bd93f9;
+  --accent-color: #ff79c6;
+  --input-bg: #44475a;
+  --input-text: #f8f8f2;
+  --button-bg: #bd93f9;
+  --button-text: #282a36;
+  --error-color: #ff6e6e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#theme-toggle {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--button-text);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid var(--secondary-color);
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--accent-color);
+  color: var(--button-text);
+}
+
+#weather-result {
+  text-align: center;
+}
+
+#city-name {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+#temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+#description {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+#error-message {
+  text-align: center;
+  color: var(--error-color);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 450px) {
+  main {
+    padding: 1rem;
+  }
+}

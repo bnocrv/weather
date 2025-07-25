@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bruno's Weather</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Bruno's Weather</h1>
+    <button id="theme-toggle" aria-label="Alternar tema claro e escuro" title="Alternar tema claro e escuro">
+      🌞
+    </button>
+  </header>
+
+  <main>
+    <form id="search-form" aria-label="Pesquisar clima por cidade">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Digite a cidade..."
+        required
+        aria-required="true"
+        aria-label="Nome da cidade"
+      />
+      <button type="submit">Buscar</button>
+    </form>
+
+    <section id="weather-result" aria-live="polite" role="region" hidden>
+      <h2 id="city-name"></h2>
+      <p id="temperature"></p>
+      <p id="description"></p>
+    </section>
+
+    <section id="error-message" role="alert" aria-live="assertive" hidden></section>
+  </main>
+
+  <footer>
+    <p>
+      Criado por <a href="https://github.com/bnocrv" target="_blank" rel="noopener noreferrer">bnocrv</a> ✨
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
